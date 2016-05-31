@@ -12,14 +12,11 @@
         .done(function( data ) {
             $.each( data, function( i, item ) {
                 var contact =
-                    "<td>" + item.fname + "</td>" +
-                    "<td>" + item.lname + "</td>" +
-                    "<td>" + item.city + "</td>" +
-                    "<td>" + item.address + "</td>" +
-                    "<td>" + item.email + "</td>" +
-                    "<td>" + item.tel + "</td>"
-                    ;
-                $("<tr/>").html(contact).appendTo("#records");
+                    "<p>" + item.fname + " " + item.lname + "</p>" +
+                    "<p>" + "Address: " + item.city + ", " + item.address + "</p>" +
+                    "<p>" + "Email: " + item.email + "</p>" +
+                    "<p>" + "Telephone number: " + item.tel + "</p>";
+                $("<div class='card'></div>").html(contact).appendTo("#records");
             });
         });
 })();
